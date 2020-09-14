@@ -1,1 +1,79 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The best page ever</title>
+        <!-- <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> -->
+        <style>
+            .red-text {color: red; margin-top: 40px; margin-right: 20px; margin-bottom: 20px; margin-left: 40px;}
+            .smaller-image {width: 100px; padding-top: 40px; padding-right: 20px; padding-bottom: 20px; padding-left: 40px; margin: 40px 20px 20px 40px;}
+            .thick-green-border {border-color: green; border-width: 10px; border-style: solid; border-radius: 50%; margin: -15px; padding: 40px 20px 20px 40px;}
+            .silver-background {background-color: silver; padding: 20px; margin: 20px;}
+            .pink-text{color: pink !important;}
+            .blue-text{color: blue;}
+            #orange-text {color: orange;}
+            #cat-photo-form {background-color: #F0F;}
+            [type='checkbox'] {margin-top: 10px; margin-bottom: 15px; padding: 1.5em;}
+            body {background-color: rgb(100,120,130); color: #1E90FF; font-family: monospace;}
+            p {font-size: 16px; font-family: monospace;}
+            h2{font-family: Lobster, monospace;}
+        </style>
+    </head>
+    <body>
+        <h1 class="pink-text blue-text" id="orange-text" style="color: white;">Hello World</h1> -->
+        <h2 class="red-text">CatPhotoApp</h2>
+        <main>
+            <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="An alt."></a>
+            <p class="red-text">View more <a href="#" 
+                target="_blank">cat photos</a></p>
+            <p>Kitty ipsum dolor sit amet, 
+                shed everywhere shed everywhere 
+                stretching attack your ankles chase 
+                the red dot, hairball run catnip eat the grass sniff.</p>
+            <p>Purr jump eat the grass rip 
+                the couch scratched sunbathe, 
+                shed everywhere rip the couch sleep 
+                in the sink fluffy fur catnip scratched.</p>
+            <a href="#footer">Jump to Bottom</a>
+
+            <div class="silver-background">
+            <h3>What do cats like?</h3>
+            <ul>
+                <li>Milk</li>
+                <li>Cheese</li>
+                <li>Me</li>
+            </ul>
+            <h3>What do cats hate?</h3>
+            <ol>
+                <li>Mondays</li>
+                <li>Water</li>
+                <li>You</li>
+            </ol>
+            </div>
+
+            <form id="cat-photo-form" action="https://freecatphotoapp.com/submit-cat-photo">
+                <input type="text" placeholder="cat photo URL" required>
+
+                <label for="indoor">
+                    <input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked>Indoor
+                </label>
+                <label for="outdoor">
+                    <input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor">Outdoor
+                </label>
+
+                <label for="loving">
+                    <input id="loving" type="checkbox" name="personality" value="loving" checked>Loving
+                </label>
+                <label for="hating">
+                    <input id="hating" type="checkbox" name="personality" value="hating">Hating
+                </label>
+                <label for="mild">
+                    <input id="mild" type="checkbox" name="personality" value="mild">Mild
+                </label>
+
+                <button type="submit">Submit</button>
+            </form>
+            <footer id="footer">Copyright Cat Photo App</footer>
+        </main>
+        <!-- A nice comment -->
+    </body>
+</html>

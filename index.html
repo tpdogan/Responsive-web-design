@@ -11,10 +11,18 @@
             .silver-background {background-color: silver; padding: 20px; margin: 20px;}
             .pink-text{color: pink !important;}
             .blue-text{color: blue; --avariable: #1AA4A3;}
+            .heart {position: relative; margin: auto; top: 0; right: 0; bottom: 0; left: 0;
+                background-color: pink; height: 50px; width: 50px; transform: rotate(-45deg);
+                animation-name: party; animation-duration: 3s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 1.5);/*nonlinear*/}
+            .heart::after {background-color: pink; content: ""; border-radius: 50%; position: absolute; width: 50px; height: 50px; top: 0px; left: 25px;}
+            .heart::before {content: ""; background-color: pink; border-radius: 50%; position: absolute; width: 50px; height: 50px; top: -25px; left: 0px;}
             #navbar{position: fixed; top: 0px; right: 0px; height: 30px; background-color: hsl(180, 90%, 35%); color: white; line-height: 30px;}
             #properties{box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}
             #orange-text {color: orange;}
-            #cat-photo-form {background-color: #AAF; height: 250px;}
+            #cat-photo-form {background: url(https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png); height: 250px;}
+            #pitter{height: 100px; width: 100px; background-color: #AFF; transform: skewX(24deg); position: relative; left: 100px;}
+            #pitter:hover{animation-name: rainbow; animation-duration: 4s;}
+            #muder{height: 100px; width: 100px; animation-name: rainbow; animation-duration: 4s; animation-fill-mode: forwards;}
             [type='checkbox'] {margin-top: 10px; margin-bottom: 15px; padding: 1.5em;}
             body {background-color: rgb(100,120,130); /*background: var(--avariable);*/ font-family: monospace; --penguin-skin: gray;}
             p {font-size: 16px; font-family: monospace; color: purple; color: var(--penguin-skin, black);}
@@ -32,6 +40,16 @@
                     font-size: 8px;
                     color: var(--penguin-belly, white);
                 }
+            }
+            @keyframes rainbow {
+                0%{background-color: blue;}
+                50%{background-color: green;}
+                100%{background-color: yellow;}
+            }
+            @keyframes party {
+                0%{top: 0px;}
+                50%{top: 100px; opacity:0.1; transform: scale(0.6) rotate(-45deg);}
+                100%{top: 1px;}
             }
         </style>
     </head>
@@ -93,8 +111,12 @@
                 <button type="submit">Submit</button>
             </form>
             <section><p>Look for a section</p></section>
-            <div style="width: 100px; height: 100px; background-color: gray; position: absolute; top: 20px; z-index: -1;"></div>
-            <footer id="footer">Copyright Cat Photo App</footer>
+            <div style="width: 100px; height: 100px; background-color: gray; position: absolute; top: 20px; z-index: -1; 
+            background: repeating-linear-gradient(45deg,yellow 0px,yellow 40px,black 40px,black 80px); transform: scale(2);"></div>
+            <div style="background: linear-gradient(35deg,#CCFFFF,#FFCCCC);"><footer id="footer">Copyright Cat Photo App</footer></div>
+            <div id="pitter"></div>
+            <div class="heart"></div>
+            <div id="muder"></div>
         </main>
         <!-- A nice comment -->
     </body>

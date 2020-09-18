@@ -22,6 +22,7 @@
             #cat-photo-form {background: url(https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png); height: 250px;}
             #pitter{height: 100px; width: 100px; background-color: #AFF; transform: skewX(24deg); position: relative; left: 100px;}
             #pitter:hover{animation-name: rainbow; animation-duration: 4s;}
+            #pitter:focus{background-color: burlywood;}
             #muder{height: 100px; width: 100px; animation-name: rainbow; animation-duration: 4s; animation-fill-mode: forwards;}
             [type='checkbox'] {margin-top: 10px; margin-bottom: 15px; padding: 1.5em;}
             body {background-color: rgb(100,120,130); /*background: var(--avariable);*/ font-family: monospace; --penguin-skin: gray;}
@@ -30,6 +31,7 @@
             h1:hover{opacity: 1;}
             h2{font-family: Lobster, monospace; color: var(--penguin-belly, black); font-size: 27px;}
             h3{position: relative; top: 15px;}
+            h3:focus{background-color: brown;}
             h4{position: absolute; bottom: 25px; right: 23px;}
             section{float: right; width: 300px; height: 300px;}
             @media (max-width: 700px) {
@@ -58,7 +60,7 @@
         <h1 class="pink-text blue-text" id="orange-text" style="color: white; margin: auto;">Hello World</h1>
         <h2 class="red-text">CatPhotoApp</h2>
         <main>
-            <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="An alt."></a>
+            <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="An alt. Could be empty as well."></a>
             <p class="red-text">View more <a href="#" 
                 target="_blank">cat photos</a></p>
             <hr>
@@ -85,39 +87,72 @@
                 <li>Water</li>
                 <li>You</li>
             </ol>
-            <h4>Absolut</h4>
+            <h3 tabindex="0">Important/Semantic matters</h3>
+            <ul>
+                <li>Always have a good alt for images</li>
+                <li>Only have one h1 and use h2,h3 ... accordingly</li>
+                <li>Have only one main tag for the content</li>
+                <li>Article, section and div tags are for different purposes but all <strong>div</strong>!, use article for standalones</li>
+                <li>Header tag is a div that should contain h1</li>
+                <li>Use nav to capture navigation links</li>
+                <li>Footer is for copyright info</li>
+                <li>For text to be seen by only screen-readers, use absolute and left -10000px</li>
+                <li>Have at least contrast of 4.5:1</li>
+                <li>Capture necessary information within the 'a' tag</li>
+            </ul>
+            <audio controls>
+                <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg">
+            </audio>
             </div>
             
             <form id="cat-photo-form" action="https://freecatphotoapp.com/submit-cat-photo">
-                <input type="text" placeholder="cat photo URL" required>
+                <label for="caturl">Enter an URL:</label>
+                <input type="text" id="caturl" placeholder="cat photo URL" required>
 
-                <label for="indoor">
-                    <input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked>Indoor
-                </label>
-                <label for="outdoor">
-                    <input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor">Outdoor
-                </label>
+                <fieldset>
+                    <legend>Where will it stay?</legend>
+                    <label for="indoor">
+                        <input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked>Indoor
+                    </label>
+                    <label for="outdoor">
+                        <input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor">Outdoor
+                    </label>
+                </fieldset>
 
-                <label for="loving">
-                    <input id="loving" type="checkbox" name="personality" value="loving" checked>Loving
-                </label>
-                <label for="hating">
-                    <input id="hating" type="checkbox" name="personality" value="hating">Hating
-                </label>
-                <label for="mild">
-                    <input id="mild" type="checkbox" name="personality" value="mild">Mild
-                </label>
+                <fieldset>
+                    <legend>Any interesting personality</legend>
+                    <label for="loving">
+                        <input id="loving" type="checkbox" name="personality" value="loving" checked>Loving
+                    </label>
+                    <label for="hating">
+                        <input id="hating" type="checkbox" name="personality" value="hating">Hating
+                    </label>
+                    <label for="mild">
+                        <input id="mild" type="checkbox" name="personality" value="mild">Mild
+                    </label>
+                </fieldset>
 
-                <button type="submit">Submit</button>
+                <label for="deliverydate">Choose a delivery date</label>
+                <input type="date" id="deliverydate" name="deldate">
+
+                <button type="submit" accesskey="b">Submit</button>
             </form>
             <section><p>Look for a section</p></section>
             <div style="width: 100px; height: 100px; background-color: gray; position: absolute; top: 20px; z-index: -1; 
             background: repeating-linear-gradient(45deg,yellow 0px,yellow 40px,black 40px,black 80px); transform: scale(2);"></div>
             <div style="background: linear-gradient(35deg,#CCFFFF,#FFCCCC);"><footer id="footer">Copyright Cat Photo App</footer></div>
-            <div id="pitter"></div>
+            <div id="pitter" tabindex="1"></div>
             <div class="heart"></div>
-            <div id="muder"></div>
+            <div id="muder">This site is created on <time datetime="2020-09-18">Friday</time></div>
+            <figure style="width: 100px; border-style: solid; border-width: 2.5px; border-color: black;">
+                <div style="height: 80px; width: 10px; background-color: greenyellow; border-style: solid; border-width: 1px; border-color: black; display: inline-block;"></div>
+                <div style="height: 90px; width: 10px; background-color: greenyellow; border-style: solid; border-width: 1px; border-color: black; display: inline-block;"></div>
+                <div style="height: 100px; width: 10px; background-color: greenyellow; border-style: solid; border-width: 1px; border-color: black; display: inline-block;"></div>
+                <br>
+                <figcaption>Trends are positive.</figcaption>
+            </figure>
         </main>
+        <footer>This site is copyrighted.</footer>
         <!-- A nice comment -->
     </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The second best page ever</title>
+        <style>
+            #boxcontainer {display: flex; flex-direction: row-reverse;}
+            #columner {display: flex; flex-direction: column; height: 200px; background-color: darkgray; justify-content: space-evenly;}
+            #box1 {width: 50%; height: 100px; background-color: aqua;}
+            #box2 {width: 50%; height: 100px; background-color: brown;}
+            #box3 {width: 33.33%; height: 40px;}
+            .tweeter {display: flex; flex-direction: row; width: 100%;}
+            .tweet {display: flex; flex-direction: column; width: 50%; height: auto; background-color: cadetblue;}
+            .dater {display: flex; width: 50%; height: 50px; background-color: crimson;}
+        </style>
+    </head>
+    <body>
+        <div id="boxcontainer">
+            <div id="box1"></div>
+            <div id="box2"></div>
+        </div>
+
+        <hr>
+        <div class="tweeter">
+            <div class="tweet">
+                <div style="width: 50%; height: 50%; align-self: center;">Today's op was a good one!</div>
+                <div style="width: 50%; height: 50%;">Tomorrow's should preceed!</div>
+            </div>
+            <div class="dater"><strong>21.09.2020</strong></div>
+        </div>
+
+        <hr>
+        <div id="columner">
+            <div id="box1" style="height: 80px; text-align: center; line-height: 80px;">These are spaced evenly!</div>
+            <div id="box2" style="align-items: center; height: auto;"><p>The align-items is nice and fun!</p></div>
+        </div>
+
+        <hr>
+        <div style="display: flex; flex-direction: row; width: 100%; flex-wrap: wrap;">
+            <div id="box3" style="background-color: darkgreen;"></div>
+            <div id="box3" style="background-color: darkgoldenrod;"></div>
+            <div id="box3" style="background-color: rebeccapurple;"></div>
+            <div id="box3" style="background-color: wheat;"></div>
+        </div>
+        <div style="display: flex; flex-direction: row; width: 100%; text-align: center;">
+            <div id="box3" style="background-color: darkgreen; flex-shrink: 8;">8</div>
+            <div id="box3" style="background-color: darkgoldenrod; flex-shrink: 1;">1</div>
+            <div id="box3" style="background-color: rebeccapurple; flex-shrink: 2;">2</div>
+            <div id="box3" style="background-color: wheat; flex-shrink: 1;">1</div>
+        </div>
+        <div style="display: flex; flex-direction: row; width: 100%; text-align: center; height: 15px;">
+            <div id="box3" style="flex-basis: 10%; background-color: darkgreen; flex-grow: 8; order: 3;">8</div>
+            <div id="box3" style="width: 10%; background-color: darkgoldenrod; flex-grow: 1;">1</div>
+            <div id="box3" style="width: 10%; background-color: rebeccapurple; flex-grow: 2;">2</div>
+            <div id="box3" style="background-color: wheat; flex: 1 1 30%;">flex: grow shrink basis</div>
+        </div>
+        <footer>This site is copyrighted.</footer>
+    </body>
+</html>

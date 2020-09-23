@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {text-align: center; display: flex; flex-direction: column;}
+            h1 {padding-top: 50px;}
+            #header {width: 100%; height: 50px; position: fixed;}
+            #header-img {width: 15%; float: left;}
+            #navbar {float: right;}
+            #video {width: 250px; height: 250px;}
+            #submit {background-color: yellow;}
+            @media (max-width: 500px) {
+                h1 {font-style: italic;}
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <img id="header-img" src="original_trombones.png" alt="Company logo">
+            <nav id="navbar">
+                <a class="nav-link" href="#features">Features</a>
+                <a class="nav-link" href="#howitworks">How it works</a>
+                <a class="nav-link" href="#pricing">Pricing</a>
+            </nav>
+        </header>
+
+        <h1>Handcrafted, home-made masterpieces</h1>
+
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+            <label for="email" id="email-label">
+                <input type="email" id="email" placeholder="Enter your email address" required>
+            </label>
+            <button type="submit" id="submit">GET STARTED</button>
+        </form>
+
+        <div id="features" style="height: 250px; background-color: teal;">
+            <video id="video" src="https://youtu.be/y8Yv4pnO7qc"></video>
+        </div>
+        <div id="howitworks"></div>
+        <div id="pricing"></div>
+    </body>
+</html>

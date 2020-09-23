@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {display: grid; width: 100%; height: auto; background-color: darkgray; margin-top: 15px;
+                        grid-template-columns: 250px 300px minmax(150px, 500px); grid-template-rows: 100px 250px;
+                        grid-column-gap: 50px; grid-row-gap: 20px;}
+            .mountain {display: grid; width: 100%; height: auto; background-color: dimgray; margin-top: 15px;
+                        grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+                        grid-gap: 30px 10px;}
+            .charger {display: grid; width: 100%; height: 200px; background-color: lightgray; margin-top: 15px;
+                        grid-template-areas: "head head" "pointer electric" "footer footer";}
+            .preacher {display: grid; width: 100%; height: 150px; background-color: slategray; margin-top: 10px;
+                        grid-template-columns: repeat(auto-fill, 250px);}
+            #div1 {background-color: aquamarine;}
+            #div2 {background-color: blueviolet;}
+            #div3 {background-color: brown;}
+            #div4 {background-color: chocolate;}
+            #div5 {background-color: lightgreen; grid-area: footer;}
+            #div6 {background-color: lightsalmon; grid-area: 2 / 2 / 3 / 3;}
+            @media (max-width: 800px){
+                .charger {
+                    grid-template-areas: "pointer head head" "pointer electric electric" "pointer footer footer";
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="div1">1</div>
+            <div id="div2" style="grid-column: 2 / 4;">2</div>
+            <div id="div3">3</div>
+            <div id="div4" style="align-self: end;">4</div>
+        </div>
+        <div class="mountain">
+            <div id="div3">3</div>
+            <div id="div4" style="grid-column: 1 / 5; justify-self: center;">4</div>
+            <div id="div2">2</div>
+            <div id="div1" style="grid-row: 3 / 5;">1</div>
+        </div>
+        <div class="mountain" style="align-items: center; justify-items: end;">
+            <div id="div3">3</div>
+            <div id="div1">1</div>
+            <div id="div2">2</div>
+        </div>
+        <div class="charger">
+            <div id="div3" style="grid-area: pointer;">3</div>
+            <div id="div1">1</div>
+            <div id="div2">2</div>
+            <div id="div5">5</div>
+            <div id="div6">6</div>
+        </div>
+        <div class="preacher">
+            <div id="div3">3</div>
+            <div id="div1">1</div>
+            <div id="div2">2</div>
+            <div style="display:grid; width: 400px; height: auto; grid-template-columns: auto 100px; background-color: steelblue;"><div id="div4"></div><div id="div2"></div></div>
+        </div>
+    </body>
+</html>

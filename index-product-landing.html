@@ -2,14 +2,43 @@
 <html>
     <head>
         <title></title>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
         <style>
-            body {text-align: center; display: flex; flex-direction: column;}
-            h1 {padding-top: 50px;}
-            #header {width: 100%; height: 50px; position: fixed;}
-            #header-img {width: 15%; float: left;}
-            #navbar {float: right;}
+            body {text-align: center; display: flex; flex-direction: column; background-color: #eee;
+                    font-family: 'Lato', sans-serif; align-items: center;}
+            h2 {font-size: 25px;}
+            nav > ul {display: flex; flex-direction: row; width: 35vw; justify-content: space-evenly;
+                    margin: 0; height: 45px; padding: 15px;}
+            nav > ul > li {list-style: none; line-height: 45px;}
+            footer {background-color: #ddd; height: 60px; width: 96%; padding: 2%; text-align: right;
+                    display: flex; flex-direction: column; margin-top: 30px;}
+
+            .nav-link {text-decoration: none; color: black;}
+            .nav-link:visited {text-decoration: none; color: black;}
+            .grid {display: grid; grid-template-columns: 20% 80%; height: 50px; margin: 50px 0 50px 0;}
+            .feat-text {text-align: left;}
+            .feat-text > h2 {margin: 0;}
+            .feat-text > p {margin: 0;}
+            .logos {line-height: 50px; font-size: 50px; vertical-align: middle;}
+            .pricetag {height: 300px; border: solid 1px; border-radius: 2px; border-color: black;}
+            .type {background-color: #ddd; text-transform: uppercase; height: 50px; line-height: 50px;
+                    font-weight: 900;}
+            
+            #header {width: 100%; min-height: 75px; position: fixed; background-color: #eee; top: 0;
+                    display: flex; justify-content: space-around; box-sizing: border-box;}
+            #header-img {height: 45px; padding: 15px; float: left; max-width: 300px;}
+            #navbar {box-sizing: border-box; margin: 0; padding: 0; }
+            #title {padding-top: 50px;}
+            #form {display: flex; flex-direction: column; align-items: center;}
+            #submit {background-color: #f1c40f; width: 100%; max-width: 150px; text-align: center;
+                    border: none; font-size: 1em; height: 30px; border-radius: 3px;
+                    margin: 15px 10px 15px 10px;}
+            #container {width: 55%; height: 700px; display: flex;
+                    flex-direction: column; margin-top: 50px;}
+            #features {display: flex; width: 100%; flex-direction: column;}
             #video {width: 250px; height: 250px;}
-            #submit {background-color: yellow;}
+            #pricing {display: grid; grid-template-columns: 32% 32% 32%; justify-content: space-between;
+                    margin-top: 70px;}
             @media (max-width: 500px) {
                 h1 {font-style: italic;}
             }
@@ -17,27 +46,92 @@
     </head>
     <body>
         <header id="header">
-            <img id="header-img" src="original_trombones.png" alt="Company logo">
+            <div style="width: 60vw;"><img id="header-img" src="original_trombones.png" alt="Company logo"></div>
             <nav id="navbar">
-                <a class="nav-link" href="#features">Features</a>
-                <a class="nav-link" href="#howitworks">How it works</a>
-                <a class="nav-link" href="#pricing">Pricing</a>
+                <ul>
+                    <li><a class="nav-link" href="#features">Features</a></li>
+                    <li><a class="nav-link" href="#howitworks">How It Works</a></li>
+                    <li><a class="nav-link" href="#pricing">Pricing</a></li>
+                </ul>
             </nav>
         </header>
 
-        <h1>Handcrafted, home-made masterpieces</h1>
+        <h2 id="title">Handcrafted, home-made masterpieces</h2>
 
         <form id="form" action="https://www.freecodecamp.com/email-submit">
             <label for="email" id="email-label">
                 <input type="email" id="email" placeholder="Enter your email address" required>
             </label>
-            <button type="submit" id="submit">GET STARTED</button>
+            <button type="submit" id="submit"><strong>GET STARTED</strong></button>
         </form>
 
-        <div id="features" style="height: 250px; background-color: teal;">
-            <video id="video" src="https://youtu.be/y8Yv4pnO7qc"></video>
+        <div id="container">
+            <section id="features">
+                <div class="grid">
+                    <div class="logos">F</div>
+                    <div class="feat-text">
+                        <h2>Premium Materials</h2>
+                        <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="logos">T</div>
+                    <div class="feat-text">
+                        <h2>Fast Shipping</h2>
+                        <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="logos">B</div>
+                    <div class="feat-text">
+                        <h2>Quality Assurance</h2>
+                        <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument. </p>
+                    </div>
+                </div>
+            </section>
+            <section id="howitworks">
+                <div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+            <section id="pricing">
+                <div class="pricetag">
+                    <div class="type"><strong>Tenor Trombone</strong></div>
+                    <h2>$600</h2>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <button id="submit" style="width: 100px; height: 40px;">SELECT</button>
+                </div>
+                <div class="pricetag">
+                    <div class="type">Bass Trombone</div>
+                    <h2>$900</h2>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <button id="submit" style="width: 100px; height: 40px;">SELECT</button>
+                </div>
+                <div class="pricetag">
+                    <div class="type">Valve Trombone</div>
+                    <h2>$1200</h2>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <p>Lorem ipsum</p>
+                    <button id="submit" style="width: 100px; height: 40px;">SELECT</button>
+                </div>
+            </section>
+            <footer style="text-align: right;">
+                <div style="float: right; margin: 0;">
+                <nav id="navbar" style="width: 200px;">
+                    <ul style="width: 100%; float: right;  margin: 0; padding: 0; margin-bottom: 5px;">
+                        <li><a class="nav-link" href="#">Privacy</a></li>
+                        <li><a class="nav-link" href="#">Terms</a></li>
+                        <li><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                </div>
+                <p style="color: #444; font-size: 0.9em; margin: 0;">Copyright 2016, Original Trombones    </p>
+            </footer>
         </div>
-        <div id="howitworks"></div>
-        <div id="pricing"></div>
     </body>
 </html>
